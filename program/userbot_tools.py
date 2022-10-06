@@ -21,9 +21,9 @@ async def join_chat(c: Client, m: Message):
                 "https://t.me/+", "https://t.me/joinchat/"
             )
             await user.join_chat(invitelink)
-            return await user.send_message(chat_id, "انضممت هنا كما طلبت")
+            return await user.send_message(chat_id, " سݪاެم عݪيكم شباެب اެسف ع اެݪتأخيࢪ بس جنت اެتࢪيك ۅٛهسه اެجيت ࢪاެح اެغني❤️‍🔥")
     except UserAlreadyParticipant:
-        return await user.send_message(chat_id, "انا بالفعل موجود هنا 😐")
+        return await user.send_message(chat_id, "اني موجود وهياتني يمك")
 
 
 @Client.on_message(
@@ -36,12 +36,12 @@ async def leave_chat(_, m: Message):
         await user.leave_chat(chat_id)
         return await _.send_message(
             chat_id,
-            "✅ غادر الحساب المساعد المجموعه بنجاح",
+            "ليش مو جنت مشغلك اغاني ومدللك",
         )
     except UserNotParticipant:
         return await _.send_message(
             chat_id,
-            "❌ غادر الحساب المساعد المجموعه بالفعل",
+            "ليش مو جنت مشغلك اغاني ومدللك",
         )
 
 
