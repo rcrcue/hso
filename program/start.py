@@ -73,11 +73,14 @@ async def start_(client: Client, message: Message):
                     InlineKeyboardButton("", callback_data="cbhowtouse")
                     ],
                 [
-                    InlineKeyboardButton("❤️ المطور", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("المطور", url=f"https://t.me/{OWNER_NAME}"),
+                ],
+                [
                     InlineKeyboardButton(
                         "‹ قناة المطور › ", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
+                        "‹ لبوت للمطور ›", url=f"https://t.me/rcrcu"
                     ),
                 ],
                 [
