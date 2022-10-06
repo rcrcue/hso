@@ -11,9 +11,9 @@
         "mongodb",
         "pyrogram"
     ],
-    "website": "https://t.me/EITHON1",
-    "repository": "https://github.com/pqnzbmmwQ92/ll",
-    "success_url": "https://t.me/EITHMU1",
+    "website": "https://t.me/rcrcu",
+    "repository": "https://github.com/rcrcue/hso",
+    "success_url": "https://t.me/rcrcu",
     "env": {
         "API_ID": {
             "description": "قم بوضع الايبي ايدي هنا",
@@ -86,7 +86,7 @@
         "UPSTREAM_REPO": {
             "description": "اتركه كما هوا",
             "required": true,
-            "value": "https://github.com/pqnzbmmwQ92/ll"
+            "value": "https://github.com/rcrcue/hso"
         }
     },
     "addons": [],
