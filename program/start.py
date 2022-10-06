@@ -74,8 +74,6 @@ async def start_(client: Client, message: Message):
                     ],
                 [
                     InlineKeyboardButton("❤️ المطور", url=f"https://t.me/{OWNER_NAME}"),
-                ],
-                [
                     InlineKeyboardButton(
                         "‹ قناة المطور › ", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
