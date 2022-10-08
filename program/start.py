@@ -94,18 +94,18 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["مبرمج السورس", f"ؤمن", f"ورس", f"السورس"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["بوت", f"", f"", f"البوت"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/dd09e759bef08d6ae8153.jpg",
-        caption=f""" [المطور الاساسي](https://t.me/rcrcu) 𖡼\n\n""",
+        photo=f"https://telegra.ph/file/0c4352a3255a8ee09ce72.jpg",
+        caption=f""" [المطور الاساسي](https://t.me/rcrcu) \n\n""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
             ],
             [
                 InlineKeyboardButton(
-                    "حسين", url=f"https://t.me/rcrcu"
+                    "Me bot Music", url=f"https://t.me/cncebot"
                 ),
             ],
             [
