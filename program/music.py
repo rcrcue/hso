@@ -162,7 +162,7 @@ async def play(c: Client, m: Message):
                         "»قِمَ بِأّلَڒٍدِ عٌ  مَلَفِّ صٌوِتّيِّ  أوِ  أګتّبِ شٍيِّئًأّ لَلَبِحٌثّ**"
                     )
                 else:
-                    suhu = await c.send_message(chat_id, "🔍**جِأّڒٍيِّ أّلَبِحٌثّ...**")
+                    suhu = await c.send_message(chat_id, "**جِأّڒٍيِّ أّلَبِحٌثّ**")
                     query = m.text.split(None, 1)[1]
                     search = ytsearch(query)
                     if search == 0:
@@ -216,7 +216,7 @@ async def play(c: Client, m: Message):
                     "» أّلَڒٍدِ عٌلَىّ ** مَلَفِّ صٌوِتّيِّ  ** أو ** أعٌطّ شٍيِّئًأّ لَلَبِحٌثّ.**"
                 )
             else:
-                suhu = await c.send_message(chat_id, "🔍**يِّبِحٌثّ...**")
+                suhu = await c.send_message(chat_id, "**جاري البحث**")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
