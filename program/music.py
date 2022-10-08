@@ -114,7 +114,7 @@ async def play(c: Client, m: Message):
                     )
         if replied:
             if replied.audio or replied.voice:
-                suhu = await replied.reply("**اެبشࢪ ثواެني بس اެبحث 🌵.**")
+                suhu = await replied.reply("**↯︙ابشر حيلي جاري التشغيل .**")
                 dl = await replied.download()
                 link = replied.link
                 if replied.audio:
@@ -132,12 +132,12 @@ async def play(c: Client, m: Message):
                     await suhu.delete()
                     await m.reply_photo(
                         photo=f"{IMG_1}",
-                        caption=f"💡 ***-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ** `{pos}`\n\n🏷 **-› اެݪاެسم:** [{songname}]({link})| موسيقى`\n💭**-› اެيدي اެݪمحاެدثةه:** `{chat_id}`\n🎧 **-› طݪب اެݪحݪۅٛ:** {m.from_user.mention()}",
+                        caption=f"💡 ***-› ابشر يروحي ضفتها للانتظار** `{pos}`\n\n**الاسم** [{songname}]({link})| موسيقى`\nايدي المحادثة`{chat_id}`\nطلب الحلو : {m.from_user.mention()}",
                         reply_markup=keyboard,
                     )
                 else:
                     try:
-                        await suhu.edit("🔄 ** الانضمام إلى vc...**")
+                        await suhu.edit("🔄 **تم الانضمام الى المكالمة**")
                         await call_py.join_group_call(
                             chat_id,
                             AudioPiped(
@@ -150,7 +150,7 @@ async def play(c: Client, m: Message):
                         requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                         await m.reply_photo(
                             photo=f"{IMG_2}",
-                            caption=f"-› اެݪحِاެݪةِ : تَمِ اެݪتَشِغِيَݪ بَنِجَاެحِ\n🏷 -› اެݪاެسم: [{songname}]({link})\n💭-› اެيدي اެݪمحاެدثةه: {chat_id}`\n💡 ** الحالة:**ݪ بَنِجَاެحِ`\n🎧 **-› طݪب اެݪحݪۅٛ:** {requester}\n📹 ** نِوِعٌ أّلَبِثّ:** `موسيقى",
+                            caption=f"-› اެݪحِاެݪةِ : تَمِ اެݪتَشِغِيَݪ بَنِجَاެحِ\nالاسم [{songname}]({link})\nايدي المحادثة {chat_id}`\nالحالة تم التشغيل`\n**طلب الحلو** {requester}\n📹 **نوع البث** `موسيقى",
                             reply_markup=keyboard,
                         )
                     except Exception as e:
@@ -185,12 +185,12 @@ async def play(c: Client, m: Message):
                                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                                 await m.reply_photo(
                                     photo=thumbnail,
-                                    caption=f"💡 ***-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ** `{pos}`\n\n🏷 **-› اެݪاެسم:** [{songname}]({url})| موسيقى`\n**⏱ أّلَمَدِ ةّ:** `{duration}`\n🎧 **-› طݪب اެݪحݪۅٛ:** {requester}",
+                                    caption=f" **↯︙ابشر يروحي جاري التشغيل .** `{pos}`\n\n**الاسم** [{songname}]({url})| موسيقى`\n**المدة** `{duration}`\n**طلب الحلو** {requester}",
                                     reply_markup=keyboard,
                                 )
                             else:
                                 try:
-                                    await suhu.edit("🔄 ** يِّمَ أّلَأّنِضّمَأّمَ لَلَمَګأّلَمَهِ وِأّلَتّشٍغٌيِّلَ...**")
+                                    await suhu.edit(" **تم الانضمام الى المكالمة**")
                                     await call_py.join_group_call(
                                         chat_id,
                                         AudioPiped(
@@ -203,7 +203,7 @@ async def play(c: Client, m: Message):
                                     requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                                     await m.reply_photo(
                                         photo=thumbnail,
-                                        caption=f"🏷 **اسم:** [{songname}]({url})\n**⏱ المدة:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **بواسطه:** {requester}\n📹 ** نوع البث:** `موسيقى`",
+                                        caption=f" **الاسم** [{songname}]({url})\n**المدة** `{duration}`\n **الحاله يشتغل** ``\n🎧 **بواسطه:** {requester}\n📹 ** نوع البث:** `موسيقى`",
                                         reply_markup=keyboard,
                                     )
                                 except Exception as ep:
@@ -239,12 +239,12 @@ async def play(c: Client, m: Message):
                             )
                             await m.reply_photo(
                                 photo=thumbnail,
-                                caption=f"💡 ***-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ** `{pos}`\n\n🏷 **-› اެݪاެسم:** [{songname}]({url})| موسيقى`\n**⏱ أّلَمَدِ ةّ:** `{duration}`\n🎧 **-› طݪب اެݪحݪۅٛ:** {requester}",
+                                caption=f"**↯︙ابشر يروحي جاري التشغيل .** `{pos}`\n\n**الاسم** [{songname}]({url})| موسيقى`\n**المدة** `{duration}`\n**طلب الحلو** {requester}",
                                 reply_markup=keyboard,
                             )
                         else:
                             try:
-                                await suhu.edit("🔄 **ﻟ̣̣ﺂ̣̐نّضّـﻣ̝ﺂ̣̐ﻣ̝ إﻟ̣̣ى ﺂ̣̐ﻟ̣̣ﻣ̝ﮗﺂ̣̐ﻟ̣̣ﻣ̝ﮪ...**")
+                                await suhu.edit("**تم الانضمام الى المكالمة**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioPiped(
@@ -257,9 +257,9 @@ async def play(c: Client, m: Message):
                                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                                 await m.reply_photo(
                                     photo=thumbnail,
-                                    caption=f"🏷 **-› اެݪاެسم:** [{songname}]({url})\n**⏱ أّلَمَدِ ةّ𖠈:** `{duration}`\n💡 ** الحالة:** `يشغل`\n🎧 **-› طݪب اެݪحݪۅٛ:** {requester}\n📹 ** نِوِعٌ أّلَبِثّ:** `موسيقى`",
+                                    caption=f" **الاسم** [{songname}]({url})\n**المدة** `{duration}`\n**الحاله يشتغل** ``\n **طلب الحلو** {requester}\n📹 **  نوع البث:** `موسيقى`",
                                     reply_markup=keyboard,
                                 )
                             except Exception as ep:
                                 await suhu.delete()
-                                await m.reply_text(f"🚫حّـدّثّـ خـّطِّأ تٌئﮗدّ ﻣ̝نّ ﺂ̣̐ﻟ̣̣ﻣ̝ﮗﺂ̣̐ﻟ̣̣ﻣ̝ﮪ ﻣ̝فّـتٌوٌحّـﮪ  ﺂ̣̐وٌﻟ̣̣آ`{ep}`")
+                                await m.reply_text(f" حّـدّثّـ خـّطِّأ تأكد من المكالمة مفتوحة`{ep}`")
