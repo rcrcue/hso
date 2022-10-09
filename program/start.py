@@ -129,7 +129,6 @@ async def help(client: Client, message: Message):
                 ),
             ],
             [
-                InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
             ]
          ]
      )
