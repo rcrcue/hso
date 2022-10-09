@@ -98,7 +98,9 @@ async def start_(client: Client, message: Message):
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/0c4352a3255a8ee09ce72.jpg",
-        caption=f""" [المطور الاساسي](https://t.me/rcrcu) \n\n""",
+        caption=f""" I ،  bot play music in groups
+Developer : @rcrcu 
+Me bot Music : @cncebot[المطور الاساسي](https://t.me/rcrcu) \n\n""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
