@@ -37,9 +37,6 @@ async def update_admin(client, message):
 
 @Client.on_message(command(["/skip", f"تخطي", "خطي"]) & other_filters)
 @authorized_users_only
-    await message.reply_text(
-        "تدلل ومن عيوني وهاي سويتلك تخطي ** **  \n** ** **** "
-    )
 async def skip(c: Client, m: Message):
     user_id = m.from_user.id
     chat_id = m.chat.id
