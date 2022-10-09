@@ -61,12 +61,12 @@ async def play(c: Client, m: Message):
         a = await c.get_chat_member(chat_id, aing.id)
         if a.status != "administrator":
             await m.reply_text(
-                f"💡 لاستخدامي ، أحتاج إلى أن أكون ** مسؤول ** مع الأذونات ** التالية**:\n\n»  __حذف الرسائل__\n» __إضافة مستخدمين__\n»  __إدارة المحادثات المرئية\n\nيتم تحديث البيانات ** تلقائيًا بعد ترقيتك ****"
+                f"💡 لاستخدامي ، أحتاج إلى أن أكون ** مسؤول ** مع الأذونات ** التالية**:\n\n»  __حذف الرسائل__\n» __إضافة مستخدمين__\n»  __إدارة دردشة الفيديو__\n\nيتم تحديث البيانات ** تلقائيًا بعد ترقيتك ****"
             )
             return
         if not a.can_manage_voice_chats:
             await m.reply_text(
-                "ألَصٌلَأّحٌيِّهِ مَفِّقِوِده:" + "\n\n»  __إدارة المحادثات المرئية"
+                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِد:" + "\n\n»  __إدارة محادثات  المرئية__"
             )
             return
         if not a.can_delete_messages:
@@ -90,7 +90,7 @@ async def play(c: Client, m: Message):
                 try:
                     await user.join_chat(m.chat.username)
                 except Exception as e:
-                    await m.reply_text(f" **فِّشٍلَ فِّيِّ أّلَأّنِضّمَأّمَ𖠉**\n\n**السبب**: `{e}`")
+                    await m.reply_text(f"❌ **فِّشٍلَ فِّيِّ أّلَأّنِضّمَأّمَ𖠉**\n\n**السبب**: `{e}`")
                     return
             else:
                 try:
@@ -106,7 +106,7 @@ async def play(c: Client, m: Message):
                     pass
                 except Exception as e:
                     return await m.reply_text(
-                        f" **فِّشٍلَ فِّيِّ أّلَأّنِضّمَأّمَ𖠉**\n\n**السبب**: `{e}`"
+                        f"❌ **فِّشٍلَ فِّيِّ أّلَأّنِضّمَأّمَ𖠉**\n\n**السبب**: `{e}`"
                     )
         if replied:
             if replied.audio or replied.voice:
@@ -133,7 +133,7 @@ async def play(c: Client, m: Message):
                     )
                 else:
                     try:
-                        await suhu.edit("**تم الانضمام الى المكالمة**")
+                        await suhu.edit(" **تم الانضمام الى المكالمة**")
                         await call_py.join_group_call(
                             chat_id,
                             AudioPiped(
@@ -151,8 +151,8 @@ async def play(c: Client, m: Message):
                         )
                     except Exception as e:
                         await suhu.delete()
-                        await m.reply_text(f"  \n\n» {e}")
-        else:
+                        await m.reply_text(f"\n\n» {e}")
+            else:
                 if len(m.command) < 2:
                     await m.reply(
                         "»قِمَ بِأّلَڒٍدِ عٌ  مَلَفِّ صٌوِتّيِّ  أوِ  أګتّبِ شٍيِّئًأّ لَلَبِحٌثّ**"
@@ -162,7 +162,7 @@ async def play(c: Client, m: Message):
                     query = m.text.split(None, 1)[1]
                     search = ytsearch(query)
                     if search == 0:
-                        await suhu.edit(" **لَمَ يِّتّمَ أّلَعٌثّوِڒٍ عٌلَىّ نِتّأّئجِ.**")
+                        await suhu.edit("❌ **لَمَ يِّتّمَ أّلَعٌثّوِڒٍ عٌلَىّ نِتّأّئجِ.**")
                     else:
                         songname = search[0]
                         url = search[1]
@@ -204,8 +204,9 @@ async def play(c: Client, m: Message):
                                     )
                                 except Exception as ep:
                                     await suhu.delete()
-                                    await m.reply_text(f"  `{ep}`")
-            else:
+                                    await m.reply_text(f" `{ep}`")
+
+        else:
             if len(m.command) < 2:
                 await m.reply(
                     "» أّلَڒٍدِ عٌلَىّ ** مَلَفِّ صٌوِتّيِّ  ** أو ** أعٌطّ شٍيِّئًأّ لَلَبِحٌثّ.**"
@@ -215,7 +216,7 @@ async def play(c: Client, m: Message):
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
-                    await suhu.edit(" **لَمَ يِّتّمَ أّلَعٌثّوِڒٍ عٌلَىّ نِتّأّئجِ.**")
+                    await suhu.edit("❌ **لَمَ يِّتّمَ أّلَعٌثّوِڒٍ عٌلَىّ نِتّأّئجِ.**")
                 else:
                     songname = search[0]
                     url = search[1]
@@ -224,7 +225,7 @@ async def play(c: Client, m: Message):
                     format = "bestaudio[ext=m4a]"
                     veez, ytlink = await ytdl(format, url)
                     if veez == 0:
-                        await suhu.edit(f"\n\n» `{ytlink}`")
+                        await suhu.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")
                     else:
                         if chat_id in QUEUE:
                             pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
@@ -257,4 +258,4 @@ async def play(c: Client, m: Message):
                                 )
                             except Exception as ep:
                                 await suhu.delete()
-                                await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا `{ep}`")
+                                await m.reply_text(f" حيلي تأكد الاتصال مفتوح لو لا `{ep}`")
