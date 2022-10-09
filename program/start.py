@@ -100,7 +100,6 @@ async def start(client: Client, message: Message):
         photo=f"https://telegra.ph/file/0c4352a3255a8ee09ce72.jpg",
         caption=f""" I ،  bot play music in groups
 Developer : @rcrcu 
-Me bot Music : @cncebot[المطور الاساسي](https://t.me/rcrcu) \n\n""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
@@ -111,7 +110,7 @@ Me bot Music : @cncebot[المطور الاساسي](https://t.me/rcrcu) \n\n"""
                 ),
             ],
             [
-                InlineKeyboardButton("♡اضف البوت الى مجموعتك♡", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+
             ]
          ]
      )
