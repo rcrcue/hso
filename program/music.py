@@ -151,7 +151,8 @@ async def play(c: Client, m: Message):
                         )
                     except Exception as e:
                         await suhu.delete()
-                        await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا \n\n» {e}")
+                        await m.reply_text(f"  \n\n» {e}")
+        else:
                 if len(m.command) < 2:
                     await m.reply(
                         "»قِمَ بِأّلَڒٍدِ عٌ  مَلَفِّ صٌوِتّيِّ  أوِ  أګتّبِ شٍيِّئًأّ لَلَبِحٌثّ**"
@@ -203,7 +204,8 @@ async def play(c: Client, m: Message):
                                     )
                                 except Exception as ep:
                                     await suhu.delete()
-                                    await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا  `{ep}`")
+                                    await m.reply_text(f"  `{ep}`")
+            else:
             if len(m.command) < 2:
                 await m.reply(
                     "» أّلَڒٍدِ عٌلَىّ ** مَلَفِّ صٌوِتّيِّ  ** أو ** أعٌطّ شٍيِّئًأّ لَلَبِحٌثّ.**"
