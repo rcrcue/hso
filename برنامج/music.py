@@ -24,7 +24,8 @@ def ytsearch(query: str):
         data = search["result"][0]
         songname = data["title"]
         url = data["link"]
-Message):
+        duration = data["duration"]
+        Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/0c4352a3255a8ee09ce72.jpg",
         return [songname, url, duration, thumbnail]
