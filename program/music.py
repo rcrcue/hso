@@ -61,12 +61,12 @@ async def play(c: Client, m: Message):
         a = await c.get_chat_member(chat_id, aing.id)
         if a.status != "administrator":
             await m.reply_text(
-                f"💡 لاستخدامي ، أحتاج إلى أن أكون ** مسؤول ** مع الأذونات ** التالية**:\n\n»  __حذف الرسائل__\n» __إضافة مستخدمين__\n»  __إدارة دردشة الفيديو__\n\nيتم تحديث البيانات ** تلقائيًا بعد ترقيتك ****"
+                f"💡 لاستخدامي ، أحتاج إلى أن أكون ** مسؤول ** مع الأذونات ** التالية**:\n\n»  __حذف الرسائل__\n» __إضافة مستخدمين__\n»  __إدارة الدردشات المرئية__\n\nيتم تحديث البيانات ** تلقائيًا بعد ترقيتك ****"
             )
             return
         if not a.can_manage_voice_chats:
             await m.reply_text(
-                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِد:" + "\n\n»  __إدارة محادثات  المرئية__"
+                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِد:" + "\n\n»  __إدارة المحادثات المرئية__"
             )
             return
         if not a.can_delete_messages:
@@ -151,7 +151,7 @@ async def play(c: Client, m: Message):
                         )
                     except Exception as e:
                         await suhu.delete()
-                        await m.reply_text(f"\n\n» {e}")
+                        await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا \n\n» {}")
             else:
                 if len(m.command) < 2:
                     await m.reply(
@@ -171,7 +171,7 @@ async def play(c: Client, m: Message):
                         format = "bestaudio[ext=m4a]"
                         veez, ytlink = await ytdl(format, url)
                         if veez == 0:
-                            await suhu.edit(f"\n\n» `{ytlink}`")
+                            await suhu.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")
                         else:
                             if chat_id in QUEUE:
                                 pos = add_to_queue(
@@ -204,7 +204,7 @@ async def play(c: Client, m: Message):
                                     )
                                 except Exception as ep:
                                     await suhu.delete()
-                                    await m.reply_text(f" `{ep}`")
+                                    await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا  `{}`")
 
         else:
             if len(m.command) < 2:
@@ -258,4 +258,4 @@ async def play(c: Client, m: Message):
                                 )
                             except Exception as ep:
                                 await suhu.delete()
-                                await m.reply_text(f" حيلي تأكد الاتصال مفتوح لو لا `{ep}`")
+                                await m.reply_text(f" حيلي تأكد الاتصال مفتوح لو لا `{}`")
