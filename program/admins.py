@@ -35,7 +35,7 @@ async def update_admin(client, message):
     )
 
 
-@Client.on_message(command(["/h", f"تخطي", "خطي"]) & other_filters)
+@Client.on_message(command(["/skip", f"تخطي", "خطي"]) & other_filters)
 @authorized_users_only
 async def skip(c: Client, m: Message):
     user_id = m.from_user.id
@@ -136,7 +136,7 @@ async def resume(client, m: Message):
 
 
 @Client.on_message(
-    command(["/mute", f"/mute@{BOT_USERNAME}", "vmute"]) & other_filters
+    command(["/mute", f"كتم الصوت", "كتم صوت"]/mute@{BOT_USERNAME}", "vmute"]) & other_filters
 )
 @authorized_users_only
 async def mute(client, m: Message):
@@ -145,16 +145,16 @@ async def mute(client, m: Message):
         try:
             await call_py.mute_stream(chat_id)
             await m.reply(
-                "🔇 **تم كتم الصوت**\n\n• **لرفع الكتم استخدم**\n» /unmute الامر" 
+                " **تم كتم الصوت**\n\n• **لرفع الكتم استخدم**\n» /unmute الامر" 
             )
         except Exception as e:
             await m.reply(f"🚫 **خطأ :**\n\n`{e}`")
     else:
-        await m.reply("❌ **قائمة التشغيل فارغه**")
+        await m.reply(" **قائمة التشغيل فارغه**")
 
 
 @Client.on_message(
-    command(["رفع الكتم", f"/unmute@{BOT_USERNAME}", "vunmute"]) & other_filters
+    command(["رفع الكتم", f"فع كتم", "رفع كتم"]/unmute@{BOT_USERNAME}", "vunmute"]) & other_filters
 )
 @authorized_users_only
 async def unmute(client, m: Message):
@@ -187,7 +187,7 @@ async def cbpause(_, query: CallbackQuery):
         except Exception as e:
             await query.edit_message_text(f"🚫 **خطأ :**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ **قائمة التشغيل فارغه**", show_alert=True)
+        await query.answer(" **قائمة التشغيل فارغه**", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("cbresume"))
@@ -237,12 +237,12 @@ async def cbmute(_, query: CallbackQuery):
             await call_py.mute_stream(chat_id)
             await query.answer("streaming muted")
             await query.edit_message_text(
-                "🔇 تم كتم الصوت", reply_markup=back_mark
+                " تم كتم الصوت", reply_markup=back_mark
             )
         except Exception as e:
             await query.edit_message_text(f"🚫 **خطأ :**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ **قائمة التشغيل فارغه**", show_alert=True)
+        await query.answer(" **قائمة التشغيل فارغه**", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("cbunmute"))
@@ -256,12 +256,12 @@ async def cbunmute(_, query: CallbackQuery):
             await call_py.unmute_stream(chat_id)
             await query.answer("streaming unmuted")
             await query.edit_message_text(
-                "🔊 تم تشغيل الصوت", reply_markup=back_mark
+                " تم تشغيل الصوت", reply_markup=back_mark
             )
         except Exception as e:
             await query.edit_message_text(f"🚫 **خطأ:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ **قائمة التشغيل فارغه**", show_alert=True)
+        await query.answer(" **قائمة التشغيل فارغه**", show_alert=True)
 
 
 @Client.on_message(
