@@ -39,7 +39,7 @@ async def ytdl(format: str, link: str):
     return 0, stderr
 
 
-@Client.on_message(command(["تشغيل","شغل","","","ش", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["تشغيل","شغل","/play","","بحث", f"play@{BOT_USERNAME}"]) & other_filters)
 async def play(c: Client, m: Message):
     
         replied = m.reply_to_message
