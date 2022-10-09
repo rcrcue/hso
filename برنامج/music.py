@@ -26,7 +26,7 @@ def ytsearch(query: str):
         url = data["link"]
 Message):
     await message.reply_photo(
-        photo=f"{BOT_PHOTO}",
+        photo=f"https://telegra.ph/file/0c4352a3255a8ee09ce72.jpg",
         return [songname, url, duration, thumbnail]
     except Exception as e:
         print(e)
