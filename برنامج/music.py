@@ -24,8 +24,9 @@ def ytsearch(query: str):
         data = search["result"][0]
         songname = data["title"]
         url = data["link"]
-        duration = data["duration"]
-        thumbnail = f"https://i.ytimg.com/vi/{data['id']}/hqdefault.jpg"
+Message):
+    await message.reply_photo(
+        photo=f"{BOT_PHOTO}",
         return [songname, url, duration, thumbnail]
     except Exception as e:
         print(e)
