@@ -41,10 +41,6 @@ await message.reply_photo(
         photo=f"https://telegra.ph/file/0c4352a3255a8ee09ce72.jpg",
         caption=f""" [المطور الاساسي](https://t.me/rcrcu) \n\n""",
         reply_markup=InlineKeyboardMarkup(
-         [
-            [
-            ],
-            [
 async def skip(c: Client, m: Message):
     user_id = m.from_user.id
     chat_id = m.chat.id
