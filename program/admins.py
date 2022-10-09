@@ -37,7 +37,6 @@ async def update_admin(client, message):
 
 @Client.on_message(command(["/h", f"تخطي", "خطي"]) & other_filters)
 @authorized_users_only
-)
 async def skip(c: Client, m: Message):
     user_id = m.from_user.id
     chat_id = m.chat.id
