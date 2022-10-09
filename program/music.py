@@ -39,7 +39,7 @@ async def ytdl(format: str, link: str):
     return 0, stderr
 
 
-@Client.on_message(command(["تشغيل","شغل","/play","","بحث", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["تشغيل","شغل","/play","بحث","", f"play@{BOT_USERNAME}"]) & other_filters)
 async def play(c: Client, m: Message):
     
         replied = m.reply_to_message
@@ -151,7 +151,7 @@ async def play(c: Client, m: Message):
                         )
                     except Exception as e:
                         await suhu.delete()
-                        await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا \n\n» {ep}")
+                        await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا \n\n» {e}")
             else:
                 if len(m.command) < 2:
                     await m.reply(
@@ -258,4 +258,4 @@ async def play(c: Client, m: Message):
                                 )
                             except Exception as ep:
                                 await suhu.delete()
-                                await m.reply_text(f" حيلي تأكد الاتصال مفتوح لو لا `{e}`")
+                                await m.reply_text(f" حيلي تأكد الاتصال مفتوح لو لا `{ep}`")
