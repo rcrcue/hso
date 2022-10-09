@@ -35,7 +35,7 @@ ydl_opts = {
 }
 
 
-@Client.on_message(command(["حميل", f"تحميل", "/song"]) & ~filters.edited)
+@Client.on_message(command(["", f"", ""]) & ~filters.edited)
 def song(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("🔎 جاري البحث انتظر قليلآ...")
@@ -87,7 +87,7 @@ def song(_, message):
 
 
 @Client.on_message(
-    command(["/vsong", f"/vsong@{bn}", f"تنزيل"]) & ~filters.edited
+    command(["", f"/vsong@{bn}", f""]) & ~filters.edited
 )
 async def vsong(client, message):
     ydl_opts = {
@@ -135,7 +135,7 @@ async def vsong(client, message):
         print(e)
 
 
-@Client.on_message(command(["lyric", f"بحث"]))
+@Client.on_message(command(["", f""]))
 async def lyrics(_, message):
     try:
         if len(message.command) < 2:
