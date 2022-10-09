@@ -37,6 +37,16 @@ async def update_admin(client, message):
 
 @Client.on_message(command(["/skip", f"تخطي", "خطي"]) & other_filters)
 @authorized_users_only
+
+async def update_admin(client, message):
+    global admins
+    new_admins = []
+    new_ads = await client.get_chat_members(message.chat.id, filter="administrators")
+    for u in new_ads:
+        new_admins.append(u.user.id)
+    admins[message.chat.id] = new_admins
+    await message.reply_text(
+        " تم التخطي الى الاغنية الي وراها ** **  \n ** ** **! ** ")
 async def skip(c: Client, m: Message):
     user_id = m.from_user.id
     chat_id = m.chat.id
