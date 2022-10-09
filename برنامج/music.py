@@ -30,6 +30,8 @@ def ytsearch(query: str):
     except Exception as e:
         print(e)
         return 0
+
+
 async def ytdl(format: str, link: str):
     stdout, stderr = await bash(f'youtube-dl -g -f "{format}" {link}')
     if stdout:
@@ -37,7 +39,7 @@ async def ytdl(format: str, link: str):
     return 0, stderr
 
 
-@Client.on_message(command(["تشغيل","شغل","/play","بحث","", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["تشغيل","شغل","","","ش", f"play@{BOT_USERNAME}"]) & other_filters)
 async def play(c: Client, m: Message):
     
         replied = m.reply_to_message
@@ -59,21 +61,21 @@ async def play(c: Client, m: Message):
         a = await c.get_chat_member(chat_id, aing.id)
         if a.status != "administrator":
             await m.reply_text(
-                f"💡 لاستخدامي ، أحتاج إلى أن أكون ** مسؤول ** مع الأذونات ** التالية**:\n\n»  __حذف الرسائل__\n» __إضافة مستخدمين__\n»  __إدارة الدردشات المرئية__\n\nيتم تحديث البيانات ** تلقائيًا بعد ترقيتك ****"
+                f"💡 لاستخدامي ، أحتاج إلى أن أكون ** مسؤول ** مع الأذونات ** التالية**:\n\n» ❌ __حذف الرسائل__\n» ❌__إضافة مستخدمين__\n» ❌ __إدارة دردشة الفيديو__\n\nيتم تحديث البيانات ** تلقائيًا بعد ترقيتك ****"
             )
             return
         if not a.can_manage_voice_chats:
             await m.reply_text(
-                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِد:" + "\n\n»  __إدارة المحادثات المرئية__"
+                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِد:" + "\n\n» ❌ __إدارة دردشة الفيديو__"
             )
             return
         if not a.can_delete_messages:
             await m.reply_text(
-                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِ:" + "\n\n»  __حذف الرسائل__"
+                "أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِ:" + "\n\n» ❌ __حذف الرسائل__"
             )
             return
         if not a.can_invite_users:
-            await m.reply_text("أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِ:" + "\n\n» __إضافة مستخدمين__")
+            await m.reply_text("أّلَصٌلَأّحٌيِّهِ مَفِّقِوِدِهِ:" + "\n\n» ❌__إضافة مستخدمين__")
             return
         try:
             ubot = (await user.get_me()).id
@@ -131,7 +133,7 @@ async def play(c: Client, m: Message):
                     )
                 else:
                     try:
-                        await suhu.edit(" **تم الانضمام الى المكالمة**")
+                        await suhu.edit("🔄 **تم الانضمام الى المكالمة**")
                         await call_py.join_group_call(
                             chat_id,
                             AudioPiped(
@@ -149,7 +151,7 @@ async def play(c: Client, m: Message):
                         )
                     except Exception as e:
                         await suhu.delete()
-                        await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا \n\n» {e}")
+                        await m.reply_text(f"🚫 حٌدِثّ خَطّأ تّأګدِ مَنِ أّلَمَګأّلَمَهِ مَفِّتّوِحٌهِ  أّوِلَآ:\n\n» {e}")
             else:
                 if len(m.command) < 2:
                     await m.reply(
@@ -202,7 +204,7 @@ async def play(c: Client, m: Message):
                                     )
                                 except Exception as ep:
                                     await suhu.delete()
-                                    await m.reply_text(f"حيلي تأكد الاتصال مفتوح لو لا  `{ep}`")
+                                    await m.reply_text(f"🚫 حٌدِثّ خَطّأ تّأّګدِ مَنِ أّلَمَګأّلَمَهِ مَفِّتّوِحٌهِ  أّوِلَآ: `{ep}`")
 
         else:
             if len(m.command) < 2:
@@ -256,4 +258,4 @@ async def play(c: Client, m: Message):
                                 )
                             except Exception as ep:
                                 await suhu.delete()
-                                await m.reply_text(f" حيلي تأكد الاتصال مفتوح لو لا `{ep}`")
+                                await m.reply_text(f" حّـدّثّـ خـّطِّأ تأكد من المكالمة مفتوحة`{ep}`")
